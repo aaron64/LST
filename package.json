@@ -1,0 +1,25 @@
+{
+  "name": "lunar_standard_time",
+  "version": "1.0.0",
+  "description": "A time object for lunar time",
+  "main": "LST.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaron64/LST.git"
+  },
+  "keywords": [
+    "lunar",
+    "time",
+    "moon",
+    "space"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaron64/LST/issues"
+  },
+  "homepage": "https://github.com/aaron64/LST#readme"
+}
