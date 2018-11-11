@@ -1,6 +1,7 @@
 exports.printMsg = function() {
     console.log("Test message");
 }
+
 function LST(t) {
     this.f=0.9843529666671;
 
@@ -88,4 +89,4 @@ LST.prototype.toString = function() {
 
 
 
-document.write(new LST(0,0))
+//document.write(new LST(0,0))
