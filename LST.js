@@ -1,52 +1,33 @@
-exports.printMsg = function() {
-    console.log("Test message");
-}
 
-exports = {
-	a: 'hi',
-	t: function() {
-		console.log("HGIDSOH");
-	}
+module.exports = LST;
+
+function LST() {
+	return LST(0)
 }
 
 function LST(t) {
-    this.f=0.9843529666671;
-
+    f=0.9843529666671;
     time = Math.floor((new Date().valueOf())/1000)
     land_time = 0xd80cb1
-    this.c = navigator.onLine ? (Math.abs(time | 0 - time) < 30 ? land_time : (time-0x5c7dc653)) : land_time;
+		//c = time-0x5c7dc653
+    c = (Math.abs(time | 0 - time) < 30 ? land_time : (time-0x5c7dc653));
+    //this.c = navigator.onLine ? (Math.abs(time | 0 - time) < 30 ? land_time : (time-0x5c7dc653)) : land_time;
 
-    s = (time + this.c) / this.f - t;
+    s = (time + c) / f - t;
     n = (s < 0 ? '-&nbsp;' : '');
     s = (s < 0 ? -s : s);
     m = 0x3C;
-    h = 0xE10;
+    hc = 0xE10;
     p = 0x15180;
-    d = 0x278D00;
+    dc = 0x278D00;
     y = 0x1DA9C00;
-    this.Y = (s / y) | 0;
-    s -= y * (t > 0 ? this.Y : this.Y++);
-    this.D = (s / d) | 0;
-    s -= d * (t > 0 ? this.D : this.D++);
-    this.dd = this.DD(this.D);
-    C = (s / p) | 0;
-    s -= p * (t > 0 ? C : C++);
-    this.cc = this.DD(C);
-    H = (s / h) | 0;
-    s -= h * H;
-    this.hh = this.DD(H);
-    M = (s / m) | 0;
-    s -= m * M;
-    this.mm = this.DD(M);
-    this.ss = this.DD((s / 1) | 0);
-}
 
-LST.prototype.DD = function(n) {
-    return (n < 0xA ? '0' + n : n);
-}
+		DD = function(n) {
+			return (n < 0xA ? '0' + n : n);
+		}
 
-LST.prototype.DN = function(n) {
-    switch (n) {
+		DN = function(n) {
+    	switch (n) {
             case 1:
                 return ('Armstrong');
             case 2:
@@ -72,9 +53,40 @@ LST.prototype.DN = function(n) {
             case 12:
                 return ('Schmitt');
         }
+		}
+
+    this.y = (s / y) | 0;
+    s -= y * (t > 0 ? this.y : this.y++);
+
+    this.d = (s / dc) | 0;
+    s -= dc * (t > 0 ? this.d : this.d++);
+    this.dd = DD(this.d);
+
+    C = (s / p) | 0;
+    s -= p * (t > 0 ? C : C++);
+    this.cc = DD(C);
+
+    H = (s / hc) | 0;
+    s -= hc * H;
+		this.h = H;
+    this.hh = DD(H);
+
+    M = (s / m) | 0;
+    s -= m * M;
+    this.mm = DD(M);
+    this.ss = DD((s / 1) | 0);
+		
+		this.getYear = function() { return this.y }
+		this.getDay = function() { return this.d }
+		this.getCycle = function() { return this.cc }
+		this.getHour = function() { return this.h }
+		this.getMinute = function() { return this.mm }
+		this.getSecond = function() {return this.ss }
+		this.getMonthOfYear = function() { return DN(this.d) }
 }
 
-LST.prototype.OS = function(n) {
+
+/*LST.prototype.OS = function(n) {
     if (n % 20 == n && n % 10 != n) {
         return n + "<sup>th</sup>";
     }
@@ -88,12 +100,9 @@ LST.prototype.OS = function(n) {
         default:
             return n + "<sup>th</sup>";
     }
-}
+}*/
 
 LST.prototype.toString = function() {
-    return (this.Y + "-" + this.dd + "-" + this.cc + "&nbsp;&nabla;&nbsp;" + this.hh + ":" + this.mm + ":" + this.ss);
+    return (this.y + "-" + this.dd + "-" + this.cc + " " + this.hh + ":" + this.mm + ":" + this.ss);
 }
 
-
-
-//document.write(new LST(0,0))
