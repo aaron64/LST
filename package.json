@@ -1,6 +1,6 @@
 {
   "name": "lunar_standard_time",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A time object for lunar time",
   "main": "LST.js",
   "scripts": {
