@@ -2,6 +2,13 @@ exports.printMsg = function() {
     console.log("Test message");
 }
 
+exports = {
+	a: 'hi',
+	t: function() {
+		console.log("HGIDSOH");
+	}
+}
+
 function LST(t) {
     this.f=0.9843529666671;
 
